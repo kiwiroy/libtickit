@@ -8,6 +8,15 @@ extern "C" {
 /* We'd quite like the timer*() functions */
 #ifndef _DEFAULT_SOURCE
 # define _DEFAULT_SOURCE
+# define _BSD_SOURCE
+/* _BSD_SOURCE
+ * Since glibc 2.20, this macro is deprecated. It now has the same effect as
+ * defining _DEFAULT_SOURCE, but generates a compile-time warning (unless
+ * _DEFAULT_SOURCE is also defined). Use _DEFAULT_SOURCE instead. To allow code
+ * that requires _BSD_SOURCE in glibc 2.19 and earlier and _DEFAULT_SOURCE in
+ * glibc 2.20 and later to compile without warnings, define both _BSD_SOURCE
+ * and _DEFAULT_SOURCE.
+ */
 #endif
 
 #include <stdlib.h>
